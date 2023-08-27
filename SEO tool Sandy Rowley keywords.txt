@@ -1,0 +1,17 @@
+function countKeywordOccurrences(keyword) {
+    // Get the full text of the webpage
+    let bodyText = document.body.innerText.toLowerCase();
+    
+    // Ensure keyword is in lowercase for case-insensitive search
+    keyword = keyword.toLowerCase();
+    
+    // Split the body text using the keyword and subtract 1 to get the count
+    let count = bodyText.split(keyword).length - 1;
+    
+    return count;
+}
+
+// Example usage
+let keyword = prompt("Enter the keyword you want to search for:");
+let occurrences = countKeywordOccurrences(keyword);
+alert(`The keyword "${keyword}" was found ${occurrences} times on this webpage.`);
